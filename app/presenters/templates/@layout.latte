@@ -1,19 +1,48 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
+<!doctype html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
-</head>
+		<meta name="msapplication-TileColor" content="#0061da">
+		<meta name="theme-color" content="#1643a3">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
-<body>
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+		<!-- Title -->
+		<title>Vobilet - a responsive, flat and full featured admin template</title>
+		<link rel="stylesheet" href="{$basePath}/assets/fonts/fonts/font-awesome.min.css">
 
-	{include content}
+		<!-- Font Family-->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-	{block scripts}
-	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
-	{/block}
-</body>
+		<!-- Dashboard Css -->
+		<link href="{$basePath}/assets/css/dashboard.css" rel="stylesheet" />
+
+		<!-- Custom scroll bar css-->
+		<link href="{$basePath}/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+		<!-- Sidemenu Css -->
+		<link href="{$basePath}/assets/plugins/toggle-sidebar/css/sidemenu.css" rel="stylesheet">
+
+		<!-- c3.js Charts Plugin -->
+		<link href="{$basePath}/assets/plugins/charts-c3/c3-chart.css" rel="stylesheet" />
+
+		<!---Font icons-->
+		<link href="{$basePath}/assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
+	</head>
+        
+        {include 'header.latte'}
+        {include 'sidebar.latte'}
+        {block content}{/block}
+        {include 'footer.latte'}
+        {block pageScripts}{/block}
+        
+    </body>
 </html>

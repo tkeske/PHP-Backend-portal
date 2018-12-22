@@ -1,944 +1,287 @@
-<!doctype html>
-<html lang="en" dir="ltr">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-		<meta name="msapplication-TileColor" content="#0061da">
-		<meta name="theme-color" content="#1643a3">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">
-		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-
-		<!-- Title -->
-		<title>Vobilet - a responsive, flat and full featured admin template</title>
-                <link rel="stylesheet" href="{$basePath}/assets/fonts/fonts/font-awesome.min.css">
-
-		<!-- Font Family-->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-
-		<!-- Dashboard Css -->
-
-		<link href="{$basePath}/assets/css/dashboard.css" rel="stylesheet" />
-
-		<!-- Custom scroll bar css-->
-		<link href="{$basePath}/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
-
-		<!-- Sidemenu Css -->
-		<link href="{$basePath}/assets/plugins/toggle-sidebar/css/sidemenu.css" rel="stylesheet">
-
-		<!-- c3.js Charts Plugin -->
-		<link href="{$basePath}/assets/plugins/charts-c3/c3-chart.css" rel="stylesheet" />
-		<link href="{$basePath}/assets/plugins/morris/morris.css" rel="stylesheet" />
-
-		<!---Font icons-->
-		<link href="{$basePath}/assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
-	</head>
-	<body class="app sidebar-mini rtl">
-		<div id="global-loader" ></div>
-		<div class="page">
-			<div class="page-main">
-				<!-- Navbar-->
-				<header class="app-header header">
-
-					<!-- Sidebar toggle button-->
-					<!-- Navbar Right Menu-->
-					<div class="container-fluid">
-						<div class="d-flex">
-							<a class="header-brand" href="index.html">
-								<img alt="vobilet logo" class="header-brand-img" src="{$basePath}/assets/images/brand/logo.png">
-							</a>
-							<a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
-							<div class="d-flex order-lg-2 ml-auto">
-								<div class="">
-									<form class="input-icon mt-2 mr-2">
-										<input class="form-control header-search" placeholder="Search&hellip;" tabindex="1" type="search">
-										<div class="input-icon-addon">
-											<i class="fe fe-search"></i>
-										</div>
-									</form>
-								</div>
-								<div class="dropdown d-none d-md-flex">
-									<a class="nav-link icon" data-toggle="dropdown">
-										<i class="fa fa-user-o"></i>
-										<span class="nav-unread bg-green"></span>
-									</a>
-									<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-										<a class="dropdown-item d-flex pb-3" href="#">
-											<span class="avatar brround mr-3 align-self-center" style="background-image: url({$basePath}/assets/images/faces/male/4.jpg)"></span>
-											<div>
-												<strong>Madeleine Scott</strong> Sent you add request
-												<div class="small text-muted">
-													view profile
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item d-flex pb-3" href="#">
-											<span class="avatar brround mr-3 align-self-center" style="background-image: url({$basePath}/assets/images/faces/female/14.jpg)"></span>
-											<div>
-												<strong>rebica</strong> Suggestions for you
-												<div class="small text-muted">
-													view profile
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item d-flex pb-3" href="#">
-											<span class="avatar brround mr-3 align-self-center" style="background-image: url({$basePath}/assets/images/faces/male/1.jpg)"></span>
-											<div>
-												<strong>Devid robott</strong> sent you add request
-												<div class="small text-muted">
-													view profile
-												</div>
-											</div>
-										</a>
-										<div class="dropdown-divider"></div><a class="dropdown-item text-center text-muted-dark" href="#">View all contact list</a>
-									</div>
-								</div>
-								<div class="dropdown d-none d-md-flex">
-									<a class="nav-link icon" data-toggle="dropdown">
-										<i class="fa fa-bell-o"></i>
-										<span class="nav-unread bg-danger"></span>
-									</a>
-									<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-										<a class="dropdown-item d-flex pb-3" href="#">
-											<div class="notifyimg">
-												<i class="fa fa-thumbs-o-up"></i>
-											</div>
-											<div>
-												<strong>Someone likes our posts.</strong>
-												<div class="small text-muted">
-													3 hours ago
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item d-flex pb-3" href="#">
-											<div class="notifyimg">
-												<i class="fa fa-commenting-o"></i>
-											</div>
-											<div>
-												<strong>3 New Comments</strong>
-												<div class="small text-muted">
-													5 hour ago
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item d-flex pb-3" href="#">
-											<div class="notifyimg">
-												<i class="fa fa-cogs"></i>
-											</div>
-											<div>
-												<strong>Server Rebooted.</strong>
-												<div class="small text-muted">
-													45 mintues ago
-												</div>
-											</div>
-										</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item text-center text-muted-dark" href="#">View all Notification</a>
-									</div>
-								</div>
-								<div class="dropdown d-none d-md-flex">
-									<a class="nav-link icon" data-toggle="dropdown"><i class="fa fa-envelope-o"></i> <span class=" nav-unread badge badge-info badge-pill">2</span></a>
-									<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-										<a class="dropdown-item text-center text-white" href="#">2 New Messages</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item d-flex pb-3" href="#">
-											<span class="avatar brround mr-3 align-self-center" style="background-image: url({$basePath}/assets/images/faces/male/41.jpg)"></span>
-											<div>
-												<strong>Madeleine</strong> Hey! there I' am available....
-												<div class="small text-muted">
-													3 hours ago
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item d-flex pb-3" href="#"><span class="avatar brround mr-3 align-self-center" style="background-image: url({$basePath}/assets/images/faces/female/1.jpg)"></span>
-											<div>
-												<strong>Anthony</strong> New product Launching...
-												<div class="small text-muted">
-													5 hour ago
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item d-flex pb-3" href="#"><span class="avatar brround mr-3 align-self-center" style="background-image: url({$basePath}/assets/images/faces/female/18.jpg)"></span>
-											<div>
-												<strong>Olivia</strong> New Schedule Realease......
-												<div class="small text-muted">
-													45 mintues ago
-												</div>
-											</div>
-										</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item text-center text-muted-dark" href="#">See all Messages</a>
-									</div>
-								</div>
-								<div class="dropdown">
-									<a class="nav-link pr-0 leading-none d-flex" data-toggle="dropdown" href="#">
-										<span class="avatar avatar-md brround" style="background-image: url({$basePath}/assets/images/faces/female/25.jpg)"></span>
-										<span class="ml-2 d-none d-lg-block">
-											<span class="text-white">Simon Russell</span>
-										</span>
-									</a>
-									<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-										<a class="dropdown-item" href="#"><i class="dropdown-icon mdi mdi-account-outline"></i> Profile</a>
-										<a class="dropdown-item" href="#"><i class="dropdown-icon mdi mdi-settings"></i> Settings</a>
-										<a class="dropdown-item" href="#"><span class="float-right"><span class="badge badge-primary">6</span></span> <i class="dropdown-icon mdi mdi-message-outline"></i> Inbox</a>
-										<a class="dropdown-item" href="#"><i class="dropdown-icon mdi mdi-comment-check-outline"></i> Message</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#"><i class="dropdown-icon mdi mdi-compass-outline"></i> Need help?</a>
-										<a class="dropdown-item" n:href="Dashboard:logout"><i class="dropdown-icon mdi mdi-logout-variant"></i> Sign out</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</header>
-
-				<!-- Sidebar menu-->
-				<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-				<aside class="app-sidebar">
-					<div class="app-sidebar__user">
-						<div class="dropdown">
-							<a class="nav-link p-0 leading-none d-flex" data-toggle="dropdown" href="#">
-								<span class="avatar avatar-md brround" style="background-image: url({$basePath}/assets/images/faces/female/25.jpg)"></span>
-								<span class="ml-2 "><span class="text-white app-sidebar__user-name font-weight-semibold">Simon Russell</span><br>
-									<span class="text-muted app-sidebar__user-name text-sm"> Ui Designer</span>
-								</span>
-							</a>
-							<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-								<a class="dropdown-item" href="#"><i class="dropdown-icon mdi mdi-account-outline"></i> Profile</a>
-								<a class="dropdown-item" href="#"><i class="dropdown-icon mdi mdi-settings"></i> Settings</a>
-								<a class="dropdown-item" href="#"><span class="float-right"><span class="badge badge-primary">6</span></span> <i class="dropdown-icon mdi mdi-message-outline"></i> Inbox</a>
-								<a class="dropdown-item" href="#"><i class="dropdown-icon mdi mdi-comment-check-outline"></i> Message</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#"><i class="dropdown-icon mdi mdi-compass-outline"></i> Need help?</a>
-								<a class="dropdown-item" href="login.html"><i class="dropdown-icon mdi mdi-logout-variant"></i> Sign out</a>
-							</div>
-						</div>
-					</div>
-					<ul class="side-menu">
-						<li class="slide">
-							<a class="side-menu__item active" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-home"></i><span class="side-menu__label">DASHBOARD</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li><a class="slide-item" href="index.html">Home 1</a></li>
-								<li><a class="slide-item" href="index2.html">Home 2</a></li>
-								<li><a class="slide-item" href="index3.html">Home 3</a></li>
-								<li><a class="slide-item" href="index4.html">Home 4</a></li>
-							</ul>
-						</li>
-						<li>
-							<a class="side-menu__item" href="widgets.html"><i class="side-menu__icon fa fa-window-restore"></i><span class="side-menu__label">Widgets</span></a>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-area-chart"></i><span class="side-menu__label">Chart Types</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="chart-flot.html" class="slide-item">Chart flot</a>
-								</li>
-								<li>
-									<a href="chart-morris.html" class="slide-item">Chart Morris</a>
-								</li>
-								<li>
-									<a href="chart-ricksaw.html" class="slide-item">Chart Ricksaw</a>
-								</li>
-								<li>
-									<a href="chart-chartist.html" class="slide-item">Chart Chartist</a>
-								</li>
-								<li>
-									<a href="charts.html" class="slide-item">Bar Charts</a>
-								</li>
-								<li>
-									<a href="chart-line.html" class="slide-item">Line Charts</a>
-								</li>
-								<li>
-									<a href="chart-donut.html" class="slide-item">Donut Charts</a>
-								</li>
-								<li>
-									<a href="chart-pie.html" class="slide-item">Pie charts</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="side-menu__item" href="maps.html"><i class="side-menu__icon fa fa-map-marker"></i><span class="side-menu__label">Maps</span></a>
-						</li>
-						<li>
-							<a class="side-menu__item" href="gallery.html"><i class="side-menu__icon fa fa-picture-o"></i><span class="side-menu__label">Gallery</span></a>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-calendar"></i><span class="side-menu__label">Calendar</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="calendar.html" class="slide-item">Default calendar</a>
-								</li>
-								<li>
-									<a href="calendar2.html" class="slide-item">Full calendar</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-snowflake-o"></i><span class="side-menu__label">Ui Design</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="cards.html" class="slide-item">Cards design</a>
-								</li>
-								<li>
-									<a href="chat.html" class="slide-item">Default Chat</a>
-								</li>
-								<li>
-									<a href="notify.html" class="slide-item">Notifications</a>
-								</li>
-								<li>
-									<a href="sweetalert.html" class="slide-item">Sweet alerts</a>
-								</li>
-								<li>
-									<a href="rangeslider.html" class="slide-item">Range slider</a>
-								</li>
-								<li>
-									<a href="scroll.html" class="slide-item">Content Scroll bar</a>
-								</li>
-								<li>
-									<a href="counters.html" class="slide-item">Counters</a>
-								</li>
-								<li>
-									<a href="loaders.html" class="slide-item">Loaders</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-user"></i><span class="side-menu__label">User pages</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="about.html" class="slide-item">About Company</a>
-								</li>
-								<li>
-									<a href="company-history.html" class="slide-item">Company History</a>
-								</li>
-								<li>
-									<a href="services.html" class="slide-item">Services</a>
-								</li>
-								<li>
-									<a href="faq.html" class="slide-item">FAQS</a>
-								</li>
-								<li>
-									<a href="terms.html" class="slide-item">Terms and Conditions</a>
-								</li>
-								<li>
-									<a href="time-line.html" class="slide-item">Time Line</a>
-								</li>
-								<li>
-									<a href="rating.html" class="slide-item">Rating</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-lock"></i><span class="side-menu__label">Account</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="login.html" class="slide-item">Login</a>
-								</li>
-								<li>
-									<a href="register.html" class="slide-item">Register</a>
-								</li>
-								<li>
-									<a href="forgot-password.html" class="slide-item">Forgot password</a>
-								</li>
-								<li>
-									<a href="lockscreen.html" class="slide-item">Lock screen</a>
-								</li>
-								<li>
-									<a href="empty.html" class="slide-item">Empty Page</a>
-								</li>
-								<li>
-									<a href="construction.html" class="slide-item">Under Construction</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-newspaper-o"></i><span class="side-menu__label">Pages</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="profile.html" class="slide-item">Profile</a>
-								</li>
-								<li>
-									<a href="editprofile.html" class="slide-item">Edit Profile</a>
-								</li>
-								<li>
-									<a href="email.html" class="slide-item">Email</a>
-								</li>
-								<li>
-									<a href="emailservices.html" class="slide-item">Email Inbox</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Tables</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="tables.html" class="slide-item">Default table</a>
-								</li>
-								<li>
-									<a href="datatable.html" class="slide-item">Data Table</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-shopping-cart"></i><span class="side-menu__label">E-commerce</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="shop.html" class="slide-item">Products</a>
-								</li>
-								<li>
-									<a href="shop-des.html" class="slide-item">Product Details</a>
-								</li>
-								<li>
-									<a href="cart.html" class="slide-item">Shopping Cart</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-bandcamp"></i><span class="side-menu__label">Icons</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="icons.html" class="slide-item">Font Awesome</a>
-								</li>
-								<li>
-									<a href="icons2.html" class="slide-item">Material Design Icons</a>
-								</li>
-								<li>
-									<a href="icons3.html" class="slide-item">Simple Line Iocns</a>
-								</li>
-								<li>
-									<a href="icons4.html" class="slide-item">Feather Icons</a>
-								</li>
-								<li>
-									<a href="icons5.html" class="slide-item">Ionic Icons</a>
-								</li>
-								<li>
-									<a href="icons6.html" class="slide-item">Flag Icons</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-file-text-o"></i><span class="side-menu__label">Forms</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="form-elements.html" class="slide-item">Form Elements</a>
-								</li>
-								<li>
-									<a href="form-wizard.html" class="slide-item">Form-wizard Elements</a>
-								</li>
-								<li>
-									<a href="wysiwyag.html" class="slide-item">Text Editor</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-cubes"></i><span class="side-menu__label">Components</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="pricing.html" class="slide-item">Pricing Tables</a>
-								</li>
-								<li>
-									<a href="crypto-currencies.html" class="slide-item">Crypto-currencies</a>
-								</li>
-								<li>
-									<a href="users-list.html" class="slide-item">User List</a>
-								</li>
-								<li>
-									<a href="search.html" class="slide-item">Search page</a>
-								</li>
-								<li>
-									<a href="blog.html" class="slide-item">Blog</a>
-								</li>
-								<li>
-									<a href="invoice.html" class="slide-item">Invoice</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-pencil-square-o"></i><span class="side-menu__label">Basic Elements</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="alerts.html" class="slide-item">Alerts</a>
-								</li>
-								<li>
-									<a href="buttons.html" class="slide-item">Buttons</a>
-								</li>
-								<li>
-									<a href="colors.html" class="slide-item">Colors</a>
-								</li>
-								<li>
-									<a href="avatars.html" class="slide-item">Avatar-Square</a>
-								</li>
-								<li>
-									<a href="avatar-round.html" class="slide-item">Avatar-Rounded</a>
-								</li>
-								<li>
-									<a href="avatar-radius.html" class="slide-item">Avatar-Radius</a>
-								</li>
-								<li>
-									<a href="dropdown.html" class="slide-item">Drop downs</a>
-								</li>
-								<li>
-									<a href="thumbnails.html" class="slide-item">Thumbnails</a>
-								</li>
-								<li>
-									<a href="mediaobject.html" class="slide-item">Media Object</a>
-								</li>
-								<li>
-									<a href="list.html" class="slide-item">List</a>
-								</li>
-								<li>
-									<a href="tags.html" class="slide-item">Tags</a>
-								</li>
-								<li>
-									<a href="pagination.html" class="slide-item">Pagination</a>
-								</li>
-								<li>
-									<a href="navigation.html" class="slide-item">Navigation</a>
-								</li>
-								<li>
-									<a href="typography.html" class="slide-item">Typography</a>
-								</li>
-								<li>
-									<a href="breadcrumbs.html" class="slide-item">Breadcrumbs</a>
-								</li>
-								<li>
-									<a href="badge.html" class="slide-item">Badges</a>
-								</li>
-								<li>
-									<a href="jumbotron.html" class="slide-item">Jumbotron</a>
-								</li>
-								<li>
-									<a href="panels.html" class="slide-item">Panels</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-codepen"></i><span class="side-menu__label">Other Elements</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="modal.html" class="slide-item">Modal</a>
-								</li>
-								<li>
-									<a href="tooltipandpopover.html" class="slide-item">Tooltip and popover</a>
-								</li>
-								<li>
-									<a href="progress.html" class="slide-item">Progress</a>
-								</li>
-								<li>
-									<a href="chart.html" class="slide-item">Charts</a>
-								</li>
-								<li>
-									<a href="carousel.html" class="slide-item">Carousels</a>
-								</li>
-								<li>
-									<a href="Accordion.html" class="slide-item">Accordions</a>
-								</li>
-								<li>
-									<a href="tabs.html" class="slide-item">Tabs</a>
-								</li>
-								<li>
-									<a href="headers.html" class="slide-item">Headers</a>
-								</li>
-								<li>
-									<a href="footers.html" class="slide-item">Footers</a>
-								</li>
-							</ul>
-						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-exclamation-circle"></i><span class="side-menu__label">Error pages</span><i class="angle fa fa-angle-right"></i></a>
-							<ul class="slide-menu">
-								<li>
-									<a href="400.html" class="slide-item">400 Error</a>
-								</li>
-								<li>
-									<a href="401.html" class="slide-item">401 Error</a>
-								</li>
-								<li>
-									<a href="403.html" class="slide-item">403 Error</a>
-								</li>
-								<li>
-									<a href="404.html" class="slide-item">404 Error</a>
-								</li>
-								<li>
-									<a href="500.html" class="slide-item">500 Error</a>
-								</li>
-								<li>
-									<a href="503.html" class="slide-item">503 Error</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a class="side-menu__item" href="https://themeforest.net/user/sprukotechnologies/portfolio"><i class="side-menu__icon fa fa-question-circle"></i><span class="side-menu__label">Help & Support</span></a>
-						</li>
-					</ul>
-				</aside>
-				<div class="app-content my-3 my-md-5">
+{block content}
+<div class="my-3 my-md-5 app-content">
 					<div class="side-app">
 						<div class="page-header">
-							<h4 class="page-title">Dashboard</h4>
+							<h4 class="page-title">Widgets</h4>
 							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Dashboard 01</li>
+								<li class="breadcrumb-item"><a href="#">Interface</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Widgets</li>
 							</ol>
 						</div>
-						<div class="row row-cards">
-							<div class="col-sm-12 col-md-6 col-lg-3">
-								<div class="card ">
-									<div class="card-body">
-										<div class="row">
-											<div class="col">
-												<div class="text-muted">App Views</div>
-												<div class="h3 m-0"><b>897</b></div>
-											</div>
-											<div class="col-auto align-self-center ">
-												<div class="chart-circle chart-circle-xs" data-value="0.65" data-thickness="6" data-color="#c21a1a"></div>
-											</div>
-										</div>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="card p-3 px-4">
+									<div>Total revenue</div>
+									<div class="py-4 m-0 text-center h1 text-green">$14,320</div>
+									<div class="d-flex">
+										<small class="text-muted">Income</small>
+										<div class="ml-auto"><i class="fa fa-caret-up text-green"></i> 4%</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-12 col-md-6 col-lg-3">
-								<div class="card ">
-									<div class="card-body">
-										<div class="row">
-											<div class="col">
-												<div class="text-muted">Our Customers</div>
-												<div class="h3 m-0"><b>125</b></div>
-											</div>
-											<div class="col-auto align-self-center">
-												<div class="chart-circle chart-circle-xs" data-value="0.68" data-thickness="6" data-color="#867efc"></div>
-											</div>
-										</div>
+							<div class="col-md-3">
+								<div class="card p-3 px-4">
+									<div>Order status</div>
+									<div class="py-4 m-0 text-center h1 text-red">738</div>
+									<div class="d-flex">
+										<small class="text-muted">New order</small>
+										<div class="ml-auto">
+										<i class="fa fa-caret-down text-red"></i> 10%</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-12 col-md-6 col-lg-3">
-								<div class="card ">
-									<div class="card-body">
-										<div class="row">
-											<div class="col">
-												<div class="text-muted">Company Profit</div>
-												<div class="h3 m-0"><b>2056</b></div>
-											</div>
-											<div class="col-auto align-self-center">
-												<div class="chart-circle chart-circle-xs" data-value="0.80" data-thickness="6" data-color="#ffcc29"></div>
-											</div>
-										</div>
+							<div class="col-md-3">
+								<div class="card p-3 px-4">
+									<div>Income status</div>
+									<div class="py-4 m-0 text-center h1 text-blue">$3,205</div>
+									<div class="d-flex">
+										<small class="text-muted">New income</small>
+										<div class="ml-auto"><i class="fa fa-caret-down text-red"></i> 0%</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-12 col-md-6 col-lg-3">
-								<div class="card ">
-									<div class="card-body">
-										<div class="row">
-											<div class="col">
-												<div class="text-muted">Business Sales</div>
-												<div class="h3 m-0"><b>567</b></div>
-											</div>
-											<div class="col-auto align-self-center">
-												<div class="chart-circle chart-circle-xs" data-value="0.42" data-thickness="6" data-color="#4ecc48"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<div class="card ">
-									<div class="card-body">
-										<div id="chart-area-spline2" class="chart-visitors"></div>
+							<div class="col-md-3">
+								<div class="card p-3 px-4">
+									<div>Customer status</div>
+									<div class="py-4 m-0 text-center h1 text-yellow">118</div>
+									<div class="d-flex">
+										<small class="text-muted">New users</small>
+										<div class="ml-auto">
+										<i class="fa fa-caret-up text-green"></i> 3%</div>
 									</div>
 								</div>
 							</div>
 						</div>
 
+
 						<div class="row">
-							<div class="col-sm-6 col-lg-3">
-								<div class="card p-3">
-									<div class="d-flex align-items-center">
-										<span class="stamp stamp-md bg-cyan mr-3">
-											<i class="fa fa-users"></i>
-										</span>
-										<div>
-											<h4 class="m-0"><a href="javascript:void(0)"><strong>765</strong> <small>Customers</small></a></h4>
-											<small class="text-muted">13 new customers </small>
+							<div class="col-lg-4 col-sm-12">
+								<div class="card text-center">
+									<div class="widget-line mt-5 ">
+										<p>Shares</p>
+										<h4>654783</h4>
+									</div>
+									<div class="mx-auto chart-circle chart-circle-md" data-value="0.67" data-thickness="8" data-color="#867efc">
+										<div class="chart-circle-value fs"><i class="fa fa-random"></i></div>
+									</div>
+									<ul class="widget-line-list mt-5 mb-5">
+										<li class="border-right">45% <br><span class="text-success"><i class="fa fa-hand-o-up"></i> Positive</span></li>
+										<li>6% <br><span class="text-danger"><i class="fa fa-hand-o-down"></i> Negative</span></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-12 p-l-0 p-r-0">
+								<div class="card text-center">
+									<div class="widget-line mt-5">
+										<p>Projects</p>
+										<h4>343256</h4>
+									</div>
+									<div class="mx-auto chart-circle chart-circle-md" data-value="0.55" data-thickness="8" data-color="#f66d9b">
+										<div class="chart-circle-value fs"><i class="fa fa-life-ring"></i></div>
+									</div>
+									<ul class="widget-line-list mt-5 mb-5">
+										<li class="border-right">55% <br><span class="text-success"><i class="fa fa-hand-o-up"></i> Positive</span></li>
+										<li>3% <br><span class="text-danger"><i class="fa fa-hand-o-down"></i> Negative</span></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-12 p-l-0">
+								<div class="card text-center">
+									<div class="widget-line  mt-5">
+										<p>Users</p>
+										<h4>567432</h4>
+									</div>
+									<div class="mx-auto chart-circle chart-circle-md" data-value="0.67" data-thickness="8" data-color="#fc7303">
+										<div class="chart-circle-value fs"><i class="fa fa-tags"></i></div>
+									</div>
+									<ul class="widget-line-list mt-5 mb-5">
+										<li class="border-right">75% <br><span class="text-success"><i class="fa fa-hand-o-up"></i> Positive</span></li>
+										<li>6% <br><span class="text-danger"><i class="fa fa-hand-o-down"></i> Negative</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="row row-deck">
+							<div class="col-md-12 col-lg-4  ">
+								<div class="card">
+									<div class="card-body">
+										<div class="d-flex justify-content-between">
+											<h4 class="card-title">Activity</h4>
+											<i class="mdi mdi-dots-vertical"></i>
+										</div>
+										<p class="card-description">What're people doing right now</p>
+										<div class="list d-flex align-items-center border-bottom py-3">
+											<div class="avatar brround d-block" style="background-image: url({$basePath}/assets/images/faces/female/17.jpg)">
+												<span class="avatar-status bg-green"></span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0">
+												<b>Lilly </b>posted in Website</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<p class="mb-0">Awesome websites!</p>
+													</div>
+													<small class="text-muted ml-auto">2 hours ago</small>
+												</div>
+											</div>
+										</div>
+										<div class="list d-flex align-items-center border-bottom py-3">
+											<div class="avatar brround d-block" style="background-image: url({$basePath}/assets/images/faces/male/6.jpg)">
+												<span class="avatar-status bg-green"></span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0">
+												<b>Thomos</b>posted in Material</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<p class="mb-0">Awesome websites!</p>
+													</div>
+													<small class="text-muted ml-auto">3 hours ago</small>
+												</div>
+											</div>
+										</div>
+										<div class="list d-flex align-items-center border-bottom py-3">
+											<div class="avatar brround d-block" style="background-image: url({$basePath}/assets/images/faces/female/14.jpg)">
+												<span class="avatar-status bg-green"></span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0">
+												<b>Marry cott </b>posted in photo</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<p class="mb-0">That's Great!</p>
+													</div>
+													<small class="text-muted ml-auto">1 hours ago</small>
+												</div>
+											</div>
+										</div>
+										<div class="list d-flex align-items-center pt-3">
+											<div class="avatar brround d-block" style="background-image: url({$basePath}/assets/images/faces/male/26.jpg)">
+												<span class="avatar-status bg-green"></span>
+											</div>
+											<div class="wrapper w-100 ml-3">
+												<p class="mb-0">
+												<b>John </b>posted in Status</p>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="d-flex align-items-center">
+														<i class="mdi mdi-clock text-muted mr-1"></i>
+														<p class="mb-0">Awesome websites!</p>
+													</div>
+													<small class="text-muted ml-auto">1 hours ago</small>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-6 col-lg-3">
-								<div class="card p-3">
-									<div class="d-flex align-items-center">
-										<span class="stamp stamp-md bg-orange mr-3">
-											<i class="fa fa-cart-arrow-down"></i>
-										</span>
-										<div>
-											<h4 class="m-0"><a href="javascript:void(0)"><strong>92</strong> <small>Selling</small></a></h4>
-											<small class="text-muted">67 deliverd</small>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-6 col-lg-3">
-								<div class="card p-3">
-									<div class="d-flex align-items-center">
-										<span class="stamp stamp-md bg-teal mr-3">
-											<i class="fa fa-eye"></i>
-										</span>
-										<div>
-											<h4 class="m-0"><a href="javascript:void(0)"><strong>2,456 </strong><small>Visitors</small></a></h4>
-											<small class="text-muted">281 sign in</small>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-6 col-lg-3">
-								<div class="card p-3">
-									<div class="d-flex align-items-center">
-										<span class="stamp stamp-md bg-indigo mr-3">
-											<i class="fa fa-file-text"></i>
-										</span>
-										<div>
-											<h4 class="m-0"><a href="javascript:void(0)"><strong>125 </strong><small>FeedBack</small></a></h4>
-											<small class="text-muted">32 Pending</small>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-12">
+							<div class="col-md-12 col-lg-4">
 								<div class="card">
 									<div class="card-header">
-										<h3 class="card-title">Facebook Source </h3>
+										<h3 class="card-title">Team</h3>
 									</div>
 									<div class="card-body">
-										<div class="current-progress">
-											<div class="progress-content">
-												<div class="row">
-													<div class="col-lg-4 mt-2">
-														<div class="progress-text">Page Profile</div>
-													</div>
-													<div class="col-lg-8">
-														<div class="current-progressbar">
-															<div class="progress progress-md">
-																<div class="progress-bar bg-success" style="width: 25%">25%</div>
-															</div>
-														</div>
-													</div>
+										<div>
+											<div class="chips">
+												<div class="team">
+													<a href="javascript:void(0)" class="chip">
+														<span class="avatar" style="background-image: url({$basePath}/assets/images/faces/female/16.jpg)"></span> Victoria
+													</a>
+													<i class="fa fa-facebook" aria-hidden="true"></i>
+													<i class="fa fa-twitter" aria-hidden="true"></i>
+													<i class="fa fa-envelope" aria-hidden="true"></i>
+													<p>On the other hand, we denounce with righteous indignation and dislike imagesralized</p>
 												</div>
-											</div>
-											<div class="progress-content">
-												<div class="row">
-													<div class="col-lg-4 mt-2">
-														<div class="progress-text">Favorite</div>
-													</div>
-													<div class="col-lg-8">
-														<div class="current-progressbar">
-															<div class="progress progress-md">
-																<div class="progress-bar bg-primary" style="width: 47%">47%</div>
-															</div>
-														</div>
-													</div>
+												<div class="team">
+													<a href="javascript:void(0)" class="chip">
+														<span class="avatar" style="background-image: url({$basePath}/assets/images/faces/male/41.jpg)"></span> Nathan
+													</a>
+													<i class="fa fa-facebook" aria-hidden="true"></i>
+													<i class="fa fa-twitter" aria-hidden="true"></i>
+													<i class="fa fa-envelope" aria-hidden="true"></i>
+													<p>On the other hand, we denounce with righteous indignation and dislike imagesralized</p>
 												</div>
-											</div>
-											<div class="progress-content">
-												<div class="row">
-													<div class="col-lg-4 mt-2">
-														<div class="progress-text">Like Story</div>
-													</div>
-													<div class="col-lg-8">
-														<div class="current-progressbar">
-															<div class="progress progress-md">
-																<div class="progress-bar bg-danger" style="width: 55%"> 55%</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="progress-content">
-												<div class="row">
-													<div class="col-lg-4 mt-2">
-														<div class="progress-text">Mobile</div>
-													</div>
-													<div class="col-lg-8">
-														<div class="current-progressbar">
-															<div class="progress progress-md">
-																<div class="progress-bar bg-secondary" style="width: 67%">67%</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="progress-content">
-												<div class="row">
-													<div class="col-lg-4 mt-2">
-														<div class="progress-text">Videos</div>
-													</div>
-													<div class="col-lg-8">
-														<div class="current-progressbar">
-															<div class="progress progress-md">
-																<div class="progress-bar bg-info" style="width: 33%">33%</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="progress-content">
-												<div class="row">
-													<div class="col-lg-4 mt-2">
-														<div class="progress-text">Photos</div>
-													</div>
-													<div class="col-lg-8">
-														<div class="current-progressbar">
-															<div class="progress progress-md">
-																<div class="progress-bar bg-pink" style="width: 78%">78%</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="progress-content">
-												<div class="row">
-													<div class="col-lg-4 mt-2">
-														<div class="progress-text">Games</div>
-													</div>
-													<div class="col-lg-8">
-														<div class="current-progressbar">
-															<div class="progress progress-md">
-																<div class="progress-bar bg-teal" style="width: 98%">98%</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="progress-content">
-												<div class="row">
-													<div class="col-lg-4 mt-2">
-														<div class="progress-text">Shares</div>
-													</div>
-													<div class="col-lg-8">
-														<div class="current-progressbar">
-															<div class="progress progress-md">
-																<div class="progress-bar bg-cyan" style="width: 55%">55%</div>
-															</div>
-														</div>
-													</div>
+												<div class="team">
+													<a href="javascript:void(0)" class="chip">
+														<span class="avatar" style="background-image: url({$basePath}/assets/images/faces/female/1.jpg)"></span> Alice
+													</a>
+													<i class="fa fa-facebook" aria-hidden="true"></i>
+													<i class="fa fa-twitter" aria-hidden="true"></i>
+													<i class="fa fa-envelope" aria-hidden="true"></i>
+													<p>On the other hand, we denounce with righteous indignation and dislike imagesralized</p>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-6 col-md-12">
+							<div class="col-md-12 col-lg-4">
 								<div class="card">
 									<div class="card-header">
-										<h3 class="card-title">Templates List</h3>
+										<h3 class="card-title">Top Countries</h3>
 									</div>
-									<div class="table-responsive">
-										<table class="table card-table table-vcenter text-nowrap">
+									<div class="card-body">
+										<table class="table card-table ">
 											<tbody>
 												<tr>
-													<td class="no-border">Wordpress</td>
-													<td class="no-border text-right"><span class="btn btn-primary btn-sm">$55</span></td>
+													<td class="w-1"><i class="flag flag-us mt-2"></i></td>
+													<td>USA
+														<div class="progress progress-xs mt-1">
+															<div class="progress-bar" style="width: 78%"></div>
+														</div>
+													</td>
+													<td class="w-1 text-right"><span class="text-muted">$6425</span></td>
 												</tr>
 												<tr>
-													<td>Web Themes</td>
-													<td class="text-right"><span class="btn btn-success btn-sm">$12</span></td>
+													<td><i class="flag flag-pl mt-2"></i></td>
+													<td>Poland
+														<div class="progress progress-xs mt-2">
+															<div class="progress-bar" style="width: 62%"></div>
+														</div>
+													</td>
+													<td class="text-right"><span class="text-muted">$5582</span></td>
 												</tr>
 												<tr>
-													<td>Html & css</td>
-													<td class="text-right"><span class="btn btn-secondary btn-sm">$40</span></td>
+													<td><i class="flag flag-de mt-2"></i></td>
+													<td>Germany
+														<div class="progress progress-xs mt-2">
+															<div class="progress-bar" style="width: 48%"></div>
+														</div>
+													</td>
+													<td class="text-right"><span class="text-muted">$4587</span></td>
 												</tr>
 												<tr>
-													<td>Designing</td>
-													<td class="text-right"><span class="btn btn-primary btn-sm">$50</span></td>
+													<td><i class="flag flag-ru mt-2"></i></td>
+													<td>Russia
+														<div class="progress progress-xs mt-2">
+															<div class="progress-bar" style="width: 35%"></div>
+														</div>
+													</td>
+													<td class="text-right"><span class="text-muted">$2520</span></td>
 												</tr>
 												<tr>
-													<td>PSD templates</td>
-													<td class="text-right"><span class="btn btn-success btn-sm">$35</span></td>
+													<td><i class="flag flag-in mt-2"></i></td>
+													<td>India
+														<div class="progress progress-xs mt-2">
+															<div class="progress-bar" style="width: 35%"></div>
+														</div>
+													</td>
+													<td class="text-right"><span class="text-muted ">$2520</span></td>
 												</tr>
-												<tr>
-													<td>eCommerce</td>
-													<td class="text-right"><span class="btn btn-secondary btn-sm">$45</span></td>
-												</tr>
-												<tr>
-													<td>CMS Themes</td>
-													<td class="text-right"><span class="btn btn-success btn-sm">$35</span></td>
-												</tr>
-												<tr>
-													<td>CMS Themes</td>
-													<td class="text-right"><span class="btn btn-success btn-sm">$35</span></td>
-												</tr>
-
 											</tbody>
 										</table>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="row row-cards row-deck">
-							<div class="col-lg-6 col-sm-12">
-								<div class="card card-aside">
-									<div class="card-body d-flex flex-column">
-										<h4><a href="#"> Making this the first true .</a></h4>
-										<div class="text-muted">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum...</div>
-										<div class="d-flex align-items-center pt-5 mt-auto">
-											<div class="avatar brround avatar-md mr-3" style="background-image: url({$basePath}/assets/images/faces/female/18.jpg)"></div>
-											<div>
-												<a href="profile.html" class="text-default">Anna Ogden</a>
-												<small class="d-block text-muted">1 hour ago</small>
-											</div>
-											<div class="ml-auto text-muted">
-												<a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-thumbs-up mr-1"></i></a>
-											</div>
-											<div class="ml-auto text-muted">
-												<a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-message-square mr-1"></i></a>
-											</div>
-											<div class="ml-auto text-muted">
-												<a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-share-2 mr-1"></i></a>
-											</div>
-										</div>
-									</div>
-									<a href="#" class="card-aside-column br-tr-7 br-br-7" style="background-image: url({$basePath}/assets/images/photos/1.jpg)"></a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-sm-12">
-								<div class="card card-aside">
-									<a href="#" class="card-aside-column br-tl-7 br-bl-7" style="background-image: url({$basePath}/assets/images/photos/2.jpg)"></a>
-									<div class="card-body d-flex flex-column">
-										<h4><a href="#">Voluptate velit esse quam.</a></h4>
-										<div class="text-muted"> Many desktop publishing packages and web page editors now use  default model text, and a search for will uncover....</div>
-										<div class="d-flex align-items-center pt-5 mt-auto">
-											<div class="avatar brround avatar-md mr-3" style="background-image: url({$basePath}/assets/images/faces/male/16.jpg)"></div>
-											<div>
-												<a href="profile.html" class="text-default">Irene	Scott</a>
-												<small class="d-block text-muted">2 days ago</small>
-											</div>
-											<div class="ml-auto text-muted">
-												<a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-thumbs-up mr-1"></i></a>
-											</div>
-											<div class="ml-auto text-muted">
-												<a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-message-square mr-1"></i></a>
-											</div>
-											<div class="ml-auto text-muted">
-												<a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-share-2 mr-1"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row mg-t-20">
-							<div class="col-12 grid-margin">
+						<div class="row row-deck">
+							<div class="col-lg-8 col-md-12">
 								<div class="card">
-									<div class="card-header">
-										<h3 class="card-title ">Manage clients</h3>
-									</div>
+
 									<div class="card-body">
+										<h5 class="card-title mb-5">Manage Tickets</h5>
 										<div class="fluid-container">
 											<div class="row ticket-card  pb-2 border-bottom pb-3 mb-3">
 												<div class="col-md-1"><img alt="profile image" class="img-sm rounded-circle mb-4 mb-md-0" src="{$basePath}/assets/images/faces/female/26.jpg"></div>
@@ -1043,136 +386,389 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="row row-cards row-deck">
-							<div class="col-12">
+							<div class="col-md-12 col-lg-4">
 								<div class="card">
-									<div class="card-header">
-										<h3 class="card-title">Latest Orders</h3>
+									<div class="card-body">
+										<h3 class="card-title">Browsers traffic</h3>
+										<div>
+											<div id="chart-browsers" class="chartwidget"></div>
+										</div>
 									</div>
-									<div class="table-responsive">
-										<table class="table card-table table-vcenter text-nowrap">
-											<thead>
-												<tr>
-													<th class="w-1">No</th>
-													<th>Product Name</th>
-													<th>User</th>
-													<th>Order Id</th>
-													<th>Date</th>
-													<th>Status</th>
-													<th>Price</th>
-													<th></th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td><span class="text-muted">001</span></td>
-													<td><a href="store.html" class="text-inherit">Apple MacBook Pro</a></td>
-													<td>Maria Grant</td>
-													<td>34567</td>
-													<td>28 May 2018</td>
-													<td><span class="status-icon bg-primary"></span> Completed</td>
-													<td>$56,908</td>
-													<td class="text-right">
-														<a href="javascript:void(0)" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i> Edit</a>
-														<a href="javascript:void(0)" class="btn btn-green btn-sm"><i class="fa fa-link"></i> Add</a>
-														<a href="javascript:void(0)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
-													</td>
-												</tr>
-												<tr>
-													<td><span class="text-muted">002</span></td>
-													<td><a href="store.html" class="text-inherit">Apple iPhone 7 Plus </a></td>
-													<td>Grace Jones</td>
-													<td>78956</td>
-													<td>12 June 2018</td>
-													<td><span class="status-icon bg-secondary"></span> Paid yesterday</td>
-													<td>$45,087</td>
-													<td class="text-right">
-														<a href="javascript:void(0)" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i> Edit</a>
-														<a href="javascript:void(0)" class="btn btn-green btn-sm"><i class="fa fa-link"></i> Add</a>
-														<a href="javascript:void(0)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
-													</td>
-												</tr>
-												<tr>
-													<td><span class="text-muted">003</span></td>
-													<td><a href="store.html" class="text-inherit">MSI GV62 </a></td>
-													<td>Zoe	Baker</td>
-													<td>23487</td>
-													<td>12 July 2018</td>
-													<td><span class="status-icon bg-success"></span> Due in 1 day</td>
-													<td>$67,123</td>
-													<td class="text-right">
-														<a href="javascript:void(0)" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i> Edit</a>
-														<a href="javascript:void(0)" class="btn btn-green btn-sm"><i class="fa fa-link"></i> Add</a>
-														<a href="javascript:void(0)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
-													</td>
-												</tr>
-												<tr>
-													<td><span class="text-muted">004</span></td>
-													<td><a href="store.html" class="text-inherit">Sony KD</a></td>
-													<td>Colin Brown</td>
-													<td>45678</td>
-													<td>14 June 2018</td>
-													<td><span class="status-icon bg-danger"></span> Pending</td>
-													<td>$76,435</td>
-													<td class="text-right">
-														<a href="javascript:void(0)" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i> Edit</a>
-														<a href="javascript:void(0)" class="btn btn-green btn-sm"><i class="fa fa-link"></i> Add</a>
-														<a href="javascript:void(0)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
-													</td>
-												</tr>
-												<tr>
-													<td><span class="text-muted">005</span></td>
-													<td><a href="store.html" class="text-inherit">Samsung Galaxy s9</a></td>
-													<td>Stewart Bower</td>
-													<td>56778</td>
-													<td>25 June 2018</td>
-													<td><span class="status-icon bg-dark"></span> Due in 2 days</td>
-													<td>$15,987</td>
-													<td class="text-right">
-														<a href="javascript:void(0)" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i> Edit</a>
-														<a href="javascript:void(0)" class="btn btn-green btn-sm"><i class="fa fa-link"></i> Add</a>
-														<a href="javascript:void(0)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
-													</td>
-												</tr>
-												<tr>
-													<td><span class="text-muted">006</span></td>
-													<td><a href="store.html" class="text-inherit">Xiaomi Mi A1</a></td>
-													<td>Kevin Gill</td>
-													<td>78956</td>
-													<td>5 July 2018</td>
-													<td><span class="status-icon bg-warning"></span> Pending </td>
-													<td>$12,456</td>
-													<td class="text-right">
-														<a href="javascript:void(0)" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i> Edit</a>
-														<a href="javascript:void(0)" class="btn btn-green btn-sm"><i class="fa fa-link"></i> Add</a>
-														<a href="javascript:void(0)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
-													</td>
-												</tr>
-											</tbody>
-										</table>
+									<div class="card-footer">
+										<i class="browser browser-chrome"></i>
+										<i class="browser browser-firefox"></i>
+										<i class="browser browser-safari"></i>
+										<i class="browser browser-opera"></i>
+										<i class="browser browser-edge"></i>
 									</div>
 								</div>
+							</div>
+						</div>
+						<div class="row ">
+							<div class="col-lg-4 col-md-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-6">
+												<div class="chart-circle" data-value="0.55" data-thickness="8" data-color="#5797fc">
+													<div class="chart-circle-value">1800 <small>users</small></div>
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="chart-circle" data-value="0.33" data-thickness="8" data-color="#17a2b8">
+													<div class="chart-circle-value">1350 <small>tasks</small></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-6">
+												<div class="chart-circle" data-value="0.25" data-thickness="8" data-color="#5797fc">
+													<div class="chart-circle-value">1098 <small>Visitors</small></div>
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="chart-circle" data-value="0.78" data-thickness="8" data-color="#4ecc48">
+													<div class="chart-circle-value">1334 <small>Customers</small></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-6">
+												<div class="chart-circle" data-value="0.67" data-thickness="8" data-color="#fc7303">
+													<div class="chart-circle-value">2345<small>Male</small></div>
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="chart-circle" data-value="0.90" data-thickness="8" data-color="#867efc">
+													<div class="chart-circle-value">34567 <small>Female</small></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row ">
+							<div class="col-md-12 col-lg-6">
+								<div class="card card-aside">
+									<div class="card-aside-column br-tl-7 br-bl-7 " style="background-image: url({$basePath}/assets/images/photos/9.jpg)"></div>
+									<div class="card-body">
+										<h4 class="card-title mb-4">Card with Rightside</h4>
+										<p>optio cumque nihil impedit quo minus id quod maxime sint et molestiae  omnis dolor repellendus free from repetition,or non-characteristic words repellendus The generated Lorem Ipsum</p>
+									</div>
+								</div>
+								<div class="card card-aside">
+									<div class="card-body">
+										<h4 class="card-title mb-4">Card with Leftside</h4>
+										<p>optio cumque nihil impedit quo minus id quod maxime sint et molestiae  omnis dolor repellendus free from repetition,or non-characteristic words repellendus The generated Lorem Ipsum</p>
+									</div>
+									<div class="card-aside-column br-tr-7 br-br-7" style="background-image: url({$basePath}/assets/images/photos/10.jpg)"></div>
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 ">
+								<div class="card" >
+									<div class="card-header border-bottom">
+										<h5 class="card-title">Employees</h5>
+									</div>
+									<div class="emp-tab">
+										<div class="table-responsive">
+											<table class="table  table-hover table-striped">
+												<thead class="text-primary">
+													<tr>
+														<th>ID</th>
+														<th>Name</th>
+														<th>Salary</th>
+														<th>Country</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>Bob Williams</td>
+														<td>$23,566</td>
+														<td>USA</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>Mike Tyson</td>
+														<td>$10,200</td>
+														<td>Canada</td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>Tim Sebastian</td>
+														<td>$32,190</td>
+														<td>Netherlands</td>
+													</tr>
+													<tr>
+														<td>4</td>
+														<td>Philip Morris</td>
+														<td>$31,123</td>
+														<td>Korea, South</td>
+													</tr>
+													<tr>
+														<td>5</td>
+														<td>Minerva Hooper</td>
+														<td>$23,789</td>
+														<td>South Africa</td>
+													</tr>
+													<tr>
+														<td>5</td>
+														<td>Minerva Hooper</td>
+														<td>$23,789</td>
+														<td>South Africa</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row row-deck">
+							<div class="col-lg-4 col-md-12">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">Portfolio</div>
+									</div>
+									<table class="table card-table">
+										<tbody>
+											<tr>
+												<td class="font-weight-bold">AAPL</td>
+												<td class="text-right">115.52<span class="text-success">(0.34%) <i class="fa fa-caret-up"></i></span></td>
+											</tr>
+											<tr>
+												<td class="font-weight-bold">GOOG</td>
+												<td class="text-right">635.3<span class="text-danger">(-1.15%) <i class="fa fa-caret-down"></i></span></td>
+											</tr>
+											<tr>
+												<td class="font-weight-bold">MSFT</td>
+												<td class="text-right">46.74<span class="text-success">(0.26%) <i class="fa fa-caret-up"></i></span></td>
+											</tr>
+											<tr>
+												<td class="font-weight-bold">LNKD</td>
+												<td class="text-right">190.04<span class="text-success">(0.28%) <i class="fa fa-caret-up"></i></span></td>
+											</tr>
+											<tr>
+												<td class="font-weight-bold">TSLA</td>
+												<td class="text-right">181.47<span class="text-danger">(-0.23%) <i class="fa fa-caret-down"></i></span></td>
+											</tr>
+											<tr>
+												<td class="font-weight-bold">YA</td>
+												<td class="text-right">37.75<span class="text-danger">(-0.74%) <i class="fa fa-caret-down"></i></span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-4">
+								<div class="card">
+									<div class="card-header">
+										<h3 class="card-title">Best Pictures for Today</h3>
+									</div>
+									<div class="card-body">
+										<div>
+											<div class="row img-gallery">
+												<div class="col-6">
+													<a href="javascript:void(0)" class="d-block link-overlay">
+														<img class="d-block img-fluid rounded" src="{$basePath}/assets/images/photos/4.jpg" alt="">
+														<span class="link-overlay-bg rounded">
+															<i class="fa fa-search"></i>
+														</span>
+													</a>
+												</div>
+												<div class="col-6">
+													<a href="javascript:void(0)" class="d-block link-overlay">
+														<img class="d-block img-fluid rounded" src="{$basePath}/assets/images/photos/5.jpg" alt="">
+														<span class="link-overlay-bg rounded">
+															<i class="fa fa-search"></i>
+														</span>
+													</a>
+												</div>
+												<div class="col-6">
+													<a href="javascript:void(0)" class="d-block link-overlay">
+														<img class="d-block img-fluid rounded" src="{$basePath}/assets/images/photos/6.jpg" alt="">
+														<span class="link-overlay-bg rounded">
+															<i class="fa fa-search"></i>
+														</span>
+													</a>
+												</div>
+												<div class="col-6">
+													<a href="javascript:void(0)" class="d-block link-overlay">
+														<img class="d-block img-fluid rounded" src="{$basePath}/assets/images/photos/7.jpg" alt="">
+														<span class="link-overlay-bg rounded">
+															<i class="fa fa-search"></i>
+														</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-4">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">Follow</h4>
+									</div>
+									<table class="table card-table mt-2 mb-2">
+										<tr>
+											<td class="align-middle w-1" >
+												<span class="avatar brround avatar-md" style="background-image: url({$basePath}/assets/images/faces/male/42.jpg)"></span>
+											</td>
+											<td>
+												<strong>Jacob Thornton</strong>
+												<small class="d-block text-muted">@fat</small>
+											</td>
+											<td class="align-middle w-1" >
+												<button class="btn btn-outline-primary btn-sm">
+													<span class="fa fa-twitter"></span> Follow
+												</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="align-middle w-1">
+												<span class="avatar brround avatar-md" style="background-image: url({$basePath}/assets/images/faces/male/2.jpg)"></span>
+											</td>
+											<td>
+												<strong>Dave Gamache</strong>
+												<small class="d-block text-muted">@dhg</small>
+											</td>
+											<td class="align-middle w-1">
+												<button class="btn btn-outline-primary btn-sm">
+													<span class="fa fa-twitter"></span> Follow
+												</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="align-middle w-1" >
+												<span class="avatar brround avatar-md" style="background-image: url({$basePath}/assets/images/faces/female/24.jpg)"></span>
+											</td>
+											<td>
+												<strong>Lilly Jitto</strong>
+												<small class="d-block text-muted">@mdo</small>
+											</td>
+											<td class="align-middle w-1" >
+												<button class="btn btn-outline-primary btn-sm">
+													<span class="fa fa-twitter"></span> Follow
+												</button>
+											</td>
+										</tr>
+										<tr>
+											<td class="align-middle w-1" >
+												<span class="avatar brround avatar-md" style="background-image: url({$basePath}/assets/images/faces/male/23.jpg)"></span>
+											</td>
+											<td>
+												<strong>Mark Otto</strong>
+												<small class="d-block text-muted">@mdo</small>
+											</td>
+											<td class="align-middle w-1" >
+												<button class="btn btn-outline-primary btn-sm">
+													<span class="fa fa-twitter"></span> Follow
+												</button>
+											</td>
+										</tr>
+
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="row row-deck">
+							<div class="col-md-12 col-lg-4">
+								<form class="card" method="post">
+									<div class="card-body p-6">
+										<div class="card-title">Login to your account</div>
+										<div class="form-group">
+											<label class="form-label">Email address</label>
+											<input type="email" class="form-control" id="exampleInputEmail12" placeholder="Enter email">
+										</div>
+										<div class="form-group">
+											<label class="form-label">
+											Password
+											<a href="./forgot-password.html" class="float-right small">I forgot password</a>
+											</label>
+											<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+										</div>
+										<div class="form-group">
+											<label class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" />
+												<span class="custom-control-label">Remember me</span>
+											</label>
+										</div>
+										<div class="form-footer">
+											<button type="submit" class="btn btn-primary btn-block">Sign in</button>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="col-md-12 col-lg-4">
+								<div class="card">
+									<div class="card-body">
+										<div class="text-center text-muted">
+											Don't have account yet? <a href="./register.html">Sign up</a>
+										</div>
+										<form class=""  method="post">
+											<div class="mt-4">
+												<div class="card-title">Forgot password</div>
+												<p class="text-muted">Enter your email address and your password will be reset and emailed to you.</p>
+												<div class="form-group">
+													<label class="form-label" >Email address</label>
+													<input type="email" class="form-control" id="exampleInputEmail13"  placeholder="Enter email">
+												</div>
+												<div class="form-footer">
+													<button type="submit" class="btn btn-primary btn-block">Send me new password</button>
+												</div>
+											</div>
+										</form>
+										<div class="text-center text-muted mt-5 ">
+											Forget it, <a href="./login.html">send me back</a> to the sign in screen.
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-4">
+								<form class="card" method="post">
+									<div class="card-body p-6">
+										<div class="card-title">Create new account</div>
+										<div class="form-group">
+											<label class="form-label">Email address</label>
+											<input type="email" class="form-control" placeholder="Enter email">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Password</label>
+											<input type="password" class="form-control" placeholder="Password">
+										</div>
+										<div class="form-group">
+											<label class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" />
+												<span class="custom-control-label">Agree the <a href="terms.html">terms and policy</a></span>
+											</label>
+										</div>
+										<div class="form-footer">
+											<button type="submit" class="btn btn-primary btn-block">Create new account</button>
+										</div>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
-					<footer class="footer">
-						<div class="container">
-							<div class="row align-items-center flex-row-reverse">
-								<div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
-									Copyright © 2018 <a href="#">Vobilet</a>. Designed by <a href="#">Spruko</a> All rights reserved.
-								</div>
-							</div>
-						</div>
-					</footer>
-				</div>
-			</div>
-		</div>
+{/block}
 
-		<!-- Back to top -->
-		<a href="#top" id="back-to-top" style="display: inline;"><i class="fa fa-angle-up"></i></a>
-
-		<!-- Dashboard Core -->
+{block pageScripts}
+<a href="#top" id="back-to-top" style="display: inline;"><i class="fa fa-angle-up"></i></a>
+		<!-- Dashboard js -->
 		<script src="{$basePath}/assets/js/vendors/jquery-3.2.1.min.js"></script>
 		<script src="{$basePath}/assets/js/vendors/bootstrap.bundle.min.js"></script>
 		<script src="{$basePath}/assets/js/vendors/jquery.sparkline.min.js"></script>
@@ -1193,13 +789,9 @@
 		<!-- Input Mask Plugin -->
 		<script src="{$basePath}/assets/plugins/input-mask/jquery.mask.min.js"></script>
 
-        <!-- Index Scripts -->
+                 <!-- Index Scripts -->
 		<script src="{$basePath}/assets/js/index.js"></script>
-		<script src="{$basePath}/assets/js/charts.js"></script>
 
-		<!-- custom js -->
+		<!-- Custom js -->
 		<script src="{$basePath}/assets/js/custom.js"></script>
-
-	</body>
-</html>
-
+{/block}

@@ -12807,8 +12807,8 @@ a.icon:hover {
 	padding-left: .6em;
 	border-radius: 10rem;
 }
-.about-img{
-	background: url('../images/about.jpg');
+.about-img-hacker{
+	background: url('../images/hacker.jpg');
 	background-size: cover;
 	background-position: center;
 }
@@ -12820,7 +12820,7 @@ a.icon:hover {
 	color: #3e4b5b;
 }
 .login-img {
-	background: url('../images/login.jpg');
+	background: url('../images/matrix.jpg');
 	background-size: cover;
 }
 .construction-img {

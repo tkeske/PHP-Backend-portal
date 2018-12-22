@@ -29,6 +29,6 @@ class LoginPresenter extends PublicPresenter
     
     public function loginFormSuccess(Form $form, $values){
         $this->flashMessage('Vítejte');
-        $this->redirect('Dashboard:default');
+        $this->redirect('Uvod:default');
     }
 }
