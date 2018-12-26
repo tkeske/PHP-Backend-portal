@@ -13,9 +13,9 @@ class AffiliatePresenter extends RestrictedPresenter
     
     public function actionDownload(){
         
-        $this->passUserArgumentToVM();
-        
+        $cmsUID = $this->getUser()->getId();
         $uuid = $this->getVirtualMachineUUID();
+        $this->passUserArgumentToVM($uuid);
         $pid  = $this->initiateRunner($uuid); 
         
         $response = $this->getHttpResponse();
@@ -25,14 +25,19 @@ class AffiliatePresenter extends RestrictedPresenter
         
         $i = 0;
         
-        while($this->isProcessRunning($pid)) {
+        while(!$this->fileInstallerExists($cmsUID)) {
             $this->message_notify($i, 'on iteration ' . $i . ' of 10' , $i*10); 
-            sleep(5);
+            sleep(7);
             $i++;
         }
         
         $this->message_notify('CLOSE', 'Process complete', null);
         $this->terminate();
+    }
+    
+    private function fileInstallerExists($cmsUID){
+        chdir("../");
+        return file_exists(getcwd()."/www/downloads/BotInstaller_".$cmsUID."-1.0.0-64.msi");
     }
     
     private function message_notify($id, $message, $progress){
@@ -46,24 +51,40 @@ class AffiliatePresenter extends RestrictedPresenter
         flush();
     }
     
-    private function passUserArgumentToVM(){
+    public function logAction($message){
+        $h = fopen("AFF.txt", "a+");
+        $prepend = "[DEBUG] - ". date("d-m-Y H:i:s", time()) . ": \n";
+        $message = $prepend . $message . "\n";
+        fwrite($h, $message);
+        fclose($h);
+    }
+    
+    private function passUserArgumentToVM($uuid){
         $uid = $this->getUser()->getId();
-        shell_exec("VBoxManage guestproperty set windows7 user_id ". $uid);
+        $res = shell_exec("sudo -u defaultunderground VBoxManage guestproperty set ".$uuid." \"user_id\" ". $uid);
+        $this->logAction("passArgumentToVM uuid je:" .$uuid ."\n");
+        $this->logAction("passArgumentToVM output je:" .$res."\n");
     }
     
     private function initiateRunner($uuid){
-        $pid = shell_exec("VBoxManage startvm '".$uuid."' --type HeadLess|at now");
+        
+        $descriptors = array(
+            0 => array("pipe", "r"),
+            1 => array("pipe", "w"), 
+            2 => array("pipe", "r")
+         );
+        
+        $p = proc_open("sudo -u defaultunderground nohup VBoxManage startvm ".$uuid." echo $! &", $descriptors, $pipes);
+        $pid = proc_get_status($p)["pid"];
+        
+        $this->logAction("initiateRunner PID is ".$pid."\n");
         return $pid;
     }
     
-    private function isProcessRunning($pid){
-       exec("ps $pid", $ProcessState);
-       return(count($ProcessState) >= 2);
-    }
-    
     private function getVirtualMachineUUID(){
-        $str = ("VBoxManage list vms");
-        $ret = explode(" ", $str)[1];
+        $str = shell_exec("sudo -u defaultunderground VBoxManage list vms");
+        $ret = trim(explode(" ", $str)[1]);
+        $this->logAction("VirtualMachineUUID is ".$ret."\n");
         return $ret;
     }
 }
